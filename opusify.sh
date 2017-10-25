@@ -5,14 +5,10 @@ while [ "$1" != "" ]; do
         -h | --help )           echo "This script will turn .wav files into .opus files."
                                 exit
                                 ;;
-        * )                     usage
-                                exit 1
     esac
     shift
 done
 
-#rename 
-rmdir .opusfiles
 mkdir .opusfiles
 find . -type f -name '*.wav'|while read fname; do
 filename=$(basename "$fname")
