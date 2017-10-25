@@ -12,10 +12,10 @@ done
 mkdir .opusfiles
 find . -type f -name '*.wav'|while read fname; do
 filename=$(basename "$fname")
-extension="${filename##*.}"
+# extension="${filename##*.}"
 filename="${filename%.*}"
-echo $fname
-echo $filename
-echo ".opusfiles/"$filename'.opus'
+echo 'Converting ' $fname ' to .opusfiles/'$filename'.opus'
 opusenc --quiet $fname ".opusfiles/"$filename'.opus' 
 done
+
+exit 0
